@@ -571,7 +571,8 @@ report_ui <- function(player_name) {
           tags$button(type = "button", class = "btn filter-toggle", `aria-controls` = "playerFilters",
                       `aria-expanded` = "true", onclick = "togglePlayerFilters()", icon("sliders"), " Filters"),
           div(class = "generate-controls",
-              actionButton("generateAnalysis", "Generate Data", icon = icon("play")),
+              actionButton("generateAnalysis", "Generate Data", icon = icon("play"),
+                           onclick = "if (document.getElementById('playerReport').classList.contains('filters-open')) togglePlayerFilters();"),
               textOutput("generateAnalysisStatus", container = span)
           )
       ),
